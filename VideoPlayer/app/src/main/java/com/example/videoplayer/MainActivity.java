@@ -12,12 +12,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        VideoView player = findViewById(R.id.Player);
-        player.setVideoPath("android.resource://" + getPackageName() + "/" + R.raw.video);
+        VideoView player  = findViewById(R.id.Player);
+        player.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.video);
         MediaController mediaController = new MediaController(this);
         player.setMediaController(mediaController);
         mediaController.setAnchorView(player);
         player.start();
     }
-
 }
